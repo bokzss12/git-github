@@ -1,0 +1,1 @@
+<img width="261" height="133" id="Picture 1" src="tech_pics_files/image001.jpg">
