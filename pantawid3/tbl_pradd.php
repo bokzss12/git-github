@@ -163,134 +163,107 @@ $tbl_pr_add->showMessage();
 <input type="hidden" name="t" value="tbl_pr">
 <input type="hidden" name="action" id="action" value="insert">
 <input type="hidden" name="modal" value="<?php echo (int)$tbl_pr_add->IsModal ?>">
-<div class="ew-add-div d-none"><!-- page* -->
+<div class="ew-add-div"><!-- page* -->
 <?php if ($tbl_pr_add->date_prep->Visible) { // date_prep ?>
 	<div id="r_date_prep" class="form-group row">
-		<label id="elh_tbl_pr_date_prep" for="x_date_prep" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_date_prep" type="text/html"><?php echo $tbl_pr_add->date_prep->caption() ?><?php echo $tbl_pr_add->date_prep->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_date_prep" for="x_date_prep" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->date_prep->caption() ?><?php echo $tbl_pr_add->date_prep->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->date_prep->cellAttributes() ?>>
-<script id="tpx_tbl_pr_date_prep" type="text/html"><span id="el_tbl_pr_date_prep">
+<span id="el_tbl_pr_date_prep">
 <input type="text" data-table="tbl_pr" data-field="x_date_prep" name="x_date_prep" id="x_date_prep" maxlength="10" placeholder="<?php echo HtmlEncode($tbl_pr_add->date_prep->getPlaceHolder()) ?>" value="<?php echo $tbl_pr_add->date_prep->EditValue ?>"<?php echo $tbl_pr_add->date_prep->editAttributes() ?>>
 <?php if (!$tbl_pr_add->date_prep->ReadOnly && !$tbl_pr_add->date_prep->Disabled && !isset($tbl_pr_add->date_prep->EditAttrs["readonly"]) && !isset($tbl_pr_add->date_prep->EditAttrs["disabled"])) { ?>
-<?php } ?>
-</span></script>
-<script type="text/html" class="tbl_pradd_js">
+<script>
 loadjs.ready(["ftbl_pradd", "datetimepicker"], function() {
 	ew.createDateTimePicker("ftbl_pradd", "x_date_prep", {"ignoreReadonly":true,"useCurrent":false,"format":0});
 });
 </script>
+<?php } ?>
+</span>
 <?php echo $tbl_pr_add->date_prep->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($tbl_pr_add->pr_number->Visible) { // pr_number ?>
 	<div id="r_pr_number" class="form-group row">
-		<label id="elh_tbl_pr_pr_number" for="x_pr_number" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_pr_number" type="text/html"><?php echo $tbl_pr_add->pr_number->caption() ?><?php echo $tbl_pr_add->pr_number->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_pr_number" for="x_pr_number" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->pr_number->caption() ?><?php echo $tbl_pr_add->pr_number->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->pr_number->cellAttributes() ?>>
-<script id="tpx_tbl_pr_pr_number" type="text/html"><span id="el_tbl_pr_pr_number">
+<span id="el_tbl_pr_pr_number">
 <input type="text" data-table="tbl_pr" data-field="x_pr_number" name="x_pr_number" id="x_pr_number" size="30" maxlength="50" placeholder="<?php echo HtmlEncode($tbl_pr_add->pr_number->getPlaceHolder()) ?>" value="<?php echo $tbl_pr_add->pr_number->EditValue ?>"<?php echo $tbl_pr_add->pr_number->editAttributes() ?>>
-</span></script>
+</span>
 <?php echo $tbl_pr_add->pr_number->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($tbl_pr_add->purpose->Visible) { // purpose ?>
 	<div id="r_purpose" class="form-group row">
-		<label id="elh_tbl_pr_purpose" for="x_purpose" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_purpose" type="text/html"><?php echo $tbl_pr_add->purpose->caption() ?><?php echo $tbl_pr_add->purpose->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_purpose" for="x_purpose" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->purpose->caption() ?><?php echo $tbl_pr_add->purpose->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->purpose->cellAttributes() ?>>
-<script id="tpx_tbl_pr_purpose" type="text/html"><span id="el_tbl_pr_purpose">
+<span id="el_tbl_pr_purpose">
 <textarea data-table="tbl_pr" data-field="x_purpose" name="x_purpose" id="x_purpose" cols="35" rows="3" placeholder="<?php echo HtmlEncode($tbl_pr_add->purpose->getPlaceHolder()) ?>"<?php echo $tbl_pr_add->purpose->editAttributes() ?>><?php echo $tbl_pr_add->purpose->EditValue ?></textarea>
-</span></script>
+</span>
 <?php echo $tbl_pr_add->purpose->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($tbl_pr_add->pr_status->Visible) { // pr_status ?>
 	<div id="r_pr_status" class="form-group row">
-		<label id="elh_tbl_pr_pr_status" for="x_pr_status" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_pr_status" type="text/html"><?php echo $tbl_pr_add->pr_status->caption() ?><?php echo $tbl_pr_add->pr_status->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_pr_status" for="x_pr_status" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->pr_status->caption() ?><?php echo $tbl_pr_add->pr_status->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->pr_status->cellAttributes() ?>>
-<script id="tpx_tbl_pr_pr_status" type="text/html"><span id="el_tbl_pr_pr_status">
+<span id="el_tbl_pr_pr_status">
 <div class="input-group">
 	<select class="custom-select ew-custom-select" data-table="tbl_pr" data-field="x_pr_status" data-value-separator="<?php echo $tbl_pr_add->pr_status->displayValueSeparatorAttribute() ?>" id="x_pr_status" name="x_pr_status"<?php echo $tbl_pr_add->pr_status->editAttributes() ?>>
 			<?php echo $tbl_pr_add->pr_status->selectOptionListHtml("x_pr_status") ?>
 		</select>
 </div>
 <?php echo $tbl_pr_add->pr_status->Lookup->getParamTag($tbl_pr_add, "p_x_pr_status") ?>
-</span></script>
+</span>
 <?php echo $tbl_pr_add->pr_status->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($tbl_pr_add->sup_id->Visible) { // sup_id ?>
 	<div id="r_sup_id" class="form-group row">
-		<label id="elh_tbl_pr_sup_id" for="x_sup_id" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_sup_id" type="text/html"><?php echo $tbl_pr_add->sup_id->caption() ?><?php echo $tbl_pr_add->sup_id->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_sup_id" for="x_sup_id" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->sup_id->caption() ?><?php echo $tbl_pr_add->sup_id->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->sup_id->cellAttributes() ?>>
-<script id="tpx_tbl_pr_sup_id" type="text/html"><span id="el_tbl_pr_sup_id">
+<span id="el_tbl_pr_sup_id">
 <div class="input-group">
 	<select class="custom-select ew-custom-select" data-table="tbl_pr" data-field="x_sup_id" data-value-separator="<?php echo $tbl_pr_add->sup_id->displayValueSeparatorAttribute() ?>" id="x_sup_id" name="x_sup_id"<?php echo $tbl_pr_add->sup_id->editAttributes() ?>>
 			<?php echo $tbl_pr_add->sup_id->selectOptionListHtml("x_sup_id") ?>
 		</select>
 </div>
 <?php echo $tbl_pr_add->sup_id->Lookup->getParamTag($tbl_pr_add, "p_x_sup_id") ?>
-</span></script>
+</span>
 <?php echo $tbl_pr_add->sup_id->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($tbl_pr_add->date_delivered->Visible) { // date_delivered ?>
 	<div id="r_date_delivered" class="form-group row">
-		<label id="elh_tbl_pr_date_delivered" for="x_date_delivered" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_date_delivered" type="text/html"><?php echo $tbl_pr_add->date_delivered->caption() ?><?php echo $tbl_pr_add->date_delivered->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_date_delivered" for="x_date_delivered" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->date_delivered->caption() ?><?php echo $tbl_pr_add->date_delivered->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->date_delivered->cellAttributes() ?>>
-<script id="tpx_tbl_pr_date_delivered" type="text/html"><span id="el_tbl_pr_date_delivered">
+<span id="el_tbl_pr_date_delivered">
 <input type="text" data-table="tbl_pr" data-field="x_date_delivered" name="x_date_delivered" id="x_date_delivered" maxlength="10" placeholder="<?php echo HtmlEncode($tbl_pr_add->date_delivered->getPlaceHolder()) ?>" value="<?php echo $tbl_pr_add->date_delivered->EditValue ?>"<?php echo $tbl_pr_add->date_delivered->editAttributes() ?>>
 <?php if (!$tbl_pr_add->date_delivered->ReadOnly && !$tbl_pr_add->date_delivered->Disabled && !isset($tbl_pr_add->date_delivered->EditAttrs["readonly"]) && !isset($tbl_pr_add->date_delivered->EditAttrs["disabled"])) { ?>
-<?php } ?>
-</span></script>
-<script type="text/html" class="tbl_pradd_js">
+<script>
 loadjs.ready(["ftbl_pradd", "datetimepicker"], function() {
 	ew.createDateTimePicker("ftbl_pradd", "x_date_delivered", {"ignoreReadonly":true,"useCurrent":false,"format":0});
 });
 </script>
+<?php } ?>
+</span>
 <?php echo $tbl_pr_add->date_delivered->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($tbl_pr_add->employeeid->Visible) { // employeeid ?>
 	<div id="r_employeeid" class="form-group row">
-		<label id="elh_tbl_pr_employeeid" for="x_employeeid" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><script id="tpc_tbl_pr_employeeid" type="text/html"><?php echo $tbl_pr_add->employeeid->caption() ?><?php echo $tbl_pr_add->employeeid->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></script></label>
+		<label id="elh_tbl_pr_employeeid" for="x_employeeid" class="<?php echo $tbl_pr_add->LeftColumnClass ?>"><?php echo $tbl_pr_add->employeeid->caption() ?><?php echo $tbl_pr_add->employeeid->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
 		<div class="<?php echo $tbl_pr_add->RightColumnClass ?>"><div <?php echo $tbl_pr_add->employeeid->cellAttributes() ?>>
-<script id="tpx_tbl_pr_employeeid" type="text/html"><span id="el_tbl_pr_employeeid">
+<span id="el_tbl_pr_employeeid">
 <div class="input-group">
 	<select class="custom-select ew-custom-select" data-table="tbl_pr" data-field="x_employeeid" data-value-separator="<?php echo $tbl_pr_add->employeeid->displayValueSeparatorAttribute() ?>" id="x_employeeid" name="x_employeeid"<?php echo $tbl_pr_add->employeeid->editAttributes() ?>>
 			<?php echo $tbl_pr_add->employeeid->selectOptionListHtml("x_employeeid") ?>
 		</select>
 </div>
 <?php echo $tbl_pr_add->employeeid->Lookup->getParamTag($tbl_pr_add, "p_x_employeeid") ?>
-</span></script>
+</span>
 <?php echo $tbl_pr_add->employeeid->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 </div><!-- /page* -->
-<div id="tpd_tbl_pradd" class="ew-custom-template"></div>
-<script id="tpm_tbl_pradd" type="text/html">
-<div id="ct_tbl_pr_add"><!--<table class="ew-table">-->
-<table style="height: 188px; width: 942px;" border="4" cellspacing="5" cellpadding="5"><!--<table style="height: 152px; width: 879px; float: left;">
-<table style="height: 152px; width: 879px; float: left;">
-<table style="height: 152px; width: 932px; float: left;" border="5" cellspacing="5" cellpadding="5">-->
-<tbody>
-<tr style="height: 9px;">
-<td style="width: 923px; height: 9px; text-align: left; vertical-align: middle;" scope="row">{{include tmpl="#tpc_tbl_pr_date_prep"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_date_prep")/}}</td>
-<td style="width: 770.367px; height: 9px; text-align: left; vertical-align: middle;" scope="row">{{include tmpl="#tpc_tbl_pr_pr_number"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_pr_number")/}}</td>
-<td style="width: 604.633px; height: 9px; text-align: left; vertical-align: middle;" scope="row">{{include tmpl="#tpc_tbl_pr_employeeid"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_employeeid")/}}&nbsp;&nbsp;</td>
-</tr>
-<tr style="height: 1px;">
-<td style="width: 923px; height: 16.8167px; text-align: left;" scope="row">{{include tmpl="#tpc_tbl_pr_pr_status"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_pr_status")/}}</td>
-<td style="width: 770.367px; height: 16.8167px; text-align: left;" scope="row">{{include tmpl="#tpc_tbl_pr_sup_id"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_sup_id")/}}</td>
-<td style="width: 604.633px; height: 1px; text-align: left;" scope="row">{{include tmpl="#tpc_tbl_pr_date_delivered"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_date_delivered")/}}</td>
-</tr>
-<tr style="height: 15.8167px;">
-<td style="width: 1693.37px; height: 15.8167px; text-align: left;" colspan="2" scope="row">{{include tmpl="#tpc_tbl_pr_purpose"/}}&nbsp;{{include tmpl=~getTemplate("#tpx_tbl_pr_purpose")/}}</td>
-<td style="width: 604.633px; height: 15.8167px; text-align: left;" scope="row">&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-</div>
-</script>
-
 <?php
 	if (in_array("tbl_spec", explode(",", $tbl_pr->getCurrentDetailTable())) && $tbl_spec->DetailAdd) {
 ?>
@@ -308,16 +281,6 @@ loadjs.ready(["ftbl_pradd", "datetimepicker"], function() {
 </div><!-- /buttons .form-group -->
 <?php } ?>
 </form>
-<script>
-loadjs.ready(["jsrender", "makerjs"], function() {
-	var $ = jQuery;
-	ew.templateData = { rows: <?php echo JsonEncode($tbl_pr->Rows) ?> };
-	ew.applyTemplate("tpd_tbl_pradd", "tpm_tbl_pradd", "tbl_pradd", "<?php echo $tbl_pr->CustomExport ?>", ew.templateData.rows[0]);
-	$("script.tbl_pradd_js").each(function() {
-		ew.addScript(this.text);
-	});
-});
-</script>
 <?php
 $tbl_pr_add->showPageFooter();
 if (Config("DEBUG"))

@@ -386,23 +386,17 @@ class tbl_pr_add extends tbl_pr
 	public function terminate($url = "")
 	{
 		global $ExportFileName, $TempImages, $DashboardReport;
-		if (Post("customexport") === NULL) {
 
 		// Page Unload event
 		$this->Page_Unload();
 
 		// Global Page Unloaded event (in userfn*.php)
 		Page_Unloaded();
-		}
 
 		// Export
 		global $tbl_pr;
 		if ($this->CustomExport && $this->CustomExport == $this->Export && array_key_exists($this->CustomExport, Config("EXPORT_CLASSES"))) {
-			if (is_array(@$_SESSION[SESSION_TEMP_IMAGES])) // Restore temp images
-				$TempImages = @$_SESSION[SESSION_TEMP_IMAGES];
-			if (Post("data") !== NULL)
-				$content = Post("data");
-			$ExportFileName = Post("filename", "");
+				$content = ob_get_contents();
 			if ($ExportFileName == "")
 				$ExportFileName = $this->TableVar;
 			$class = PROJECT_NAMESPACE . Config("EXPORT_CLASSES." . $this->CustomExport);
@@ -417,10 +411,6 @@ class tbl_pr_add extends tbl_pr
 				exit();
 			}
 		}
-	if ($this->CustomExport) { // Save temp images array for custom export
-		if (is_array($TempImages))
-			$_SESSION[SESSION_TEMP_IMAGES] = $TempImages;
-	}
 		if (!IsApi())
 			$this->Page_Redirecting($url);
 
@@ -549,6 +539,8 @@ class tbl_pr_add extends tbl_pr
 	 */
 	protected function hideFieldsForAddEdit()
 	{
+		if ($this->isAdd() || $this->isCopy() || $this->isGridAdd())
+			$this->prID->Visible = FALSE;
 	}
 
 	// Lookup data
@@ -1394,10 +1386,6 @@ class tbl_pr_add extends tbl_pr
 		// Call Row Rendered event
 		if ($this->RowType != ROWTYPE_AGGREGATEINIT)
 			$this->Row_Rendered();
-
-		// Save data for Custom Template
-		if ($this->RowType == ROWTYPE_VIEW || $this->RowType == ROWTYPE_EDIT || $this->RowType == ROWTYPE_ADD)
-			$this->Rows[] = $this->customTemplateFieldValues();
 	}
 
 	// Validate form

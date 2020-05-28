@@ -115,10 +115,10 @@ class tbl_pr extends DbTable
 		$this->pr_status->PleaseSelectText = $Language->phrase("PleaseSelect"); // "PleaseSelect" text
 		switch ($CurrentLanguage) {
 			case "en":
-				$this->pr_status->Lookup = new Lookup('pr_status', 'tbl_pr_status', FALSE, 'pr_statusID', ["pr_statusID","pr_dsc","",""], [], [], [], [], [], [], '`pr_statusID` DESC', '');
+				$this->pr_status->Lookup = new Lookup('pr_status', 'tbl_pr_status', FALSE, 'pr_statusID', ["pr_statusID","pr_dsc","",""], [], [], [], [], [], [], '`pr_statusID` ASC', '');
 				break;
 			default:
-				$this->pr_status->Lookup = new Lookup('pr_status', 'tbl_pr_status', FALSE, 'pr_statusID', ["pr_statusID","pr_dsc","",""], [], [], [], [], [], [], '`pr_statusID` DESC', '');
+				$this->pr_status->Lookup = new Lookup('pr_status', 'tbl_pr_status', FALSE, 'pr_statusID', ["pr_statusID","pr_dsc","",""], [], [], [], [], [], [], '`pr_statusID` ASC', '');
 				break;
 		}
 		$this->pr_status->DefaultErrorMessage = $Language->phrase("IncorrectInteger");
