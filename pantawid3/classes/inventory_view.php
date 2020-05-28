@@ -308,7 +308,7 @@ class inventory_view extends DbTable
 		$this->fields['Current_Location'] = &$this->Current_Location;
 
 		// status
-		$this->status = new DbField('inventory_view', 'inventory_view', 'x_status', 'status', '`status`', '`status`', 3, 11, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->status = new DbField('inventory_view', 'inventory_view', 'x_status', 'status', '`status`', '`status`', 3, 50, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->status->Sortable = TRUE; // Allow sort
 		switch ($CurrentLanguage) {
 			case "en":

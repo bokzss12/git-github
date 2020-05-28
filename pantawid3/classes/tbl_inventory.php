@@ -331,7 +331,7 @@ class tbl_inventory extends DbTable
 		$this->fields['employee_id'] = &$this->employee_id;
 
 		// status
-		$this->status = new DbField('tbl_inventory', 'tbl_inventory', 'x_status', 'status', '`status`', '`status`', 3, 11, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
+		$this->status = new DbField('tbl_inventory', 'tbl_inventory', 'x_status', 'status', '`status`', '`status`', 3, 50, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
 		$this->status->Required = TRUE; // Required field
 		$this->status->Sortable = TRUE; // Allow sort
 		$this->status->UsePleaseSelect = TRUE; // Use PleaseSelect by default

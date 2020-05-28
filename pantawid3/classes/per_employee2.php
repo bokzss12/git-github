@@ -254,7 +254,7 @@ class per_employee2 extends ReportTable
 		$this->fields['namefull'] = &$this->namefull;
 
 		// status
-		$this->status = new ReportField('per_employee2', 'per_employee2', 'x_status', 'status', '`status`', '`status`', 3, 11, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->status = new ReportField('per_employee2', 'per_employee2', 'x_status', 'status', '`status`', '`status`', 3, 50, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->status->Sortable = TRUE; // Allow sort
 		$this->status->SourceTableVar = 'item_per_employee';
 		$this->fields['status'] = &$this->status;

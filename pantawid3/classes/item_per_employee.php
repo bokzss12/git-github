@@ -231,7 +231,7 @@ class item_per_employee extends DbTable
 		$this->fields['namefull'] = &$this->namefull;
 
 		// status
-		$this->status = new DbField('item_per_employee', 'item_per_employee', 'x_status', 'status', '`status`', '`status`', 3, 11, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->status = new DbField('item_per_employee', 'item_per_employee', 'x_status', 'status', '`status`', '`status`', 3, 50, -1, FALSE, '`status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->status->Sortable = TRUE; // Allow sort
 		$this->status->DefaultErrorMessage = $Language->phrase("IncorrectInteger");
 		$this->fields['status'] = &$this->status;
